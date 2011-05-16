@@ -35,11 +35,7 @@ class CLI
      */
     function updateDependencies($frontend, $args, $options)
     {
-        $main = new Main();
-
-        if ($args['vendor_dir']) {
-            $main->setPath($args['vendor_dir']);
-        }
+        $main = new Main($args['vendor_dir']);
 
         echo 'Scanning '.$main->getPath().' for dependencies...'.PHP_EOL;
         $deps = $main->scanPackageXMLDependencies();

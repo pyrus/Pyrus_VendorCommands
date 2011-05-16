@@ -19,7 +19,7 @@ Example: `pyrus vendor-update`</description>
   <active>yes</active>
  </lead>
  <date>2011-05-16</date>
- <time>11:21:35</time>
+ <time>11:38:35</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>

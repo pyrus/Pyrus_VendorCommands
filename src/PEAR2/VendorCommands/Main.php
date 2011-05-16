@@ -26,7 +26,6 @@
 namespace PEAR2\VendorCommands;
 class Main
 {
-    protected static $vendor_dir_name = 'vendor';
 
     /**
      * Path to the vendor directory which contains the libs
@@ -45,7 +44,7 @@ class Main
     function __construct($path = null)
     {
         if (null === $path) {
-            $path = getcwd();
+            $path = getcwd() . DIRECTORY_SEPARATOR . 'vendor';
         }
 
         $this->setPath($path);
@@ -70,7 +69,7 @@ class Main
     {
         $deps = array();
 
-        $xml_file = $this->path . DIRECTORY_SEPARATOR . 'package.xml';
+        $xml_file = dirname($this->path) . DIRECTORY_SEPARATOR . 'package.xml';
         if (file_exists($xml_file)) {
             $xml = new \PEAR2\Pyrus\PackageFile($xml_file);
             foreach ($xml->dependencies['required']->package as $dep) {
@@ -99,8 +98,7 @@ class Main
     function setPath($path)
     {
         $this->path = $path;
-
-        $this->config = \PEAR2\Pyrus\Config::singleton($path . DIRECTORY_SEPARATOR . self::$vendor_dir_name);
+        $this->config = \PEAR2\Pyrus\Config::singleton($path);
     }
 
     function getPath()
