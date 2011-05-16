@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands version="2.0" xmlns="http://pear2.php.net/dtd/customcommand-2.0">
+ <command>
+  <name>vendor-update</name>
+  <class>PEAR2\VendorCommands\CLI</class>
+  <function>updateDependencies</function>
+  <autoloadpath/>
+  <summary>Update all the libraries installed in the ./vendor/ directory.</summary>
+  <shortcut>vu</shortcut>
+  <options>
+   <option>
+    <name>optionaldeps</name>
+    <shortopt>o</shortopt>
+    <type><bool/></type>
+    <doc>Automatically download and install all optional dependencies</doc>
+   </option>
+   <option>
+    <name>force</name>
+    <shortopt>f</shortopt>
+    <type><bool/></type>
+    <doc>Force the installation to proceed independent of errors.  USE SPARINGLY.</doc>
+   </option>
+  </options>
+  <arguments>
+  <argument>
+    <name>vendor_dir</name>
+    <multiple>0</multiple>
+    <optional>1</optional>
+    <doc>path to the vendor directory to manage</doc>
+   </argument>
+  </arguments>
+  <doc>
+This command scans all existing dependencies in the vendor directory and
+upgrades them to their latest available versions.
+
+Dependencies are examined by looking at the package.xml file and the vendor 
+registry.
+  </doc>
+ </command>
+</commands>

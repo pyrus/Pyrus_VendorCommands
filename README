@@ -1,0 +1,9 @@
+Various commands for handling vendor dependencies for your application
+
+The VendorCommands plugin for Pyrus operates on the `vendor` directory within
+your local application directory.
+
+The vendor-update command scans the package.xml file for dependencies and will
+install them into the local vendor/ directory of your application.
+
+Example: `pyrus vendor-update`

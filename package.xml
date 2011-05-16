@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="2.1" xmlns="http://pear.php.net/dtd/package-2.1" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.1     http://pear.php.net/dtd/package-2.1.xsd">
+ <name>PEAR2_VendorCommands</name>
+ <channel>pear2.php.net</channel>
+ <summary>Various commands for handling vendor dependencies for your application
+</summary>
+ <description>
+The VendorCommands plugin for Pyrus operates on the `vendor` directory within
+your local application directory.
+
+The vendor-update command scans the package.xml file for dependencies and will
+install them into the local vendor/ directory of your application.
+
+Example: `pyrus vendor-update`</description>
+ <lead>
+  <name>Brett Bieber</name>
+  <user>saltybeagle</user>
+  <email>saltybeagle@php.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2011-05-16</date>
+ <time>11:21:35</time>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/bsd-license.php">New BSD License</license>
+ <notes>First relase, only vendor-update is available currently.
+
+Package PEAR2_VendorCommands API release notes for version 0.1.0.</notes>
+ <contents>
+  <dir name="/">
+   <dir name="customcommand" baseinstalldir="/">
+    <file role="customcommand" name="commands.xml"/>
+   </dir>
+   <dir name="src" baseinstalldir="/">
+    <dir name="PEAR2">
+     <dir name="VendorCommands">
+      <file role="php" name="CLI.php"/>
+      <file role="php" name="Main.php"/>
+     </dir>
+    </dir>
+   </dir>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>2.0.0a1</min>
+   </pearinstaller>
+   <package>
+    <name>PEAR2_Pyrus</name>
+    <channel>pear2.php.net</channel>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease/>
+</package>
