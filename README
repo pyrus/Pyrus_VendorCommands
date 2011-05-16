@@ -1,7 +1,8 @@
 Various commands for handling vendor dependencies for your application
 
 The VendorCommands plugin for Pyrus operates on the `vendor` directory within
-your local application directory.
+your local application directory. To install this plugin use 
+`php pyrus.phar install -p PEAR2_VendorCommands-alpha`
 
 The vendor-update command scans the package.xml file for dependencies and will
 install them into the local vendor/ directory of your application.
