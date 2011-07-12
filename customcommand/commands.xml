@@ -2,7 +2,7 @@
 <commands version="2.0" xmlns="http://pear2.php.net/dtd/customcommand-2.0">
  <command>
   <name>vendor-update</name>
-  <class>PEAR2\VendorCommands\CLI</class>
+  <class>Pyrus\VendorCommands\CLI</class>
   <function>updateDependencies</function>
   <autoloadpath/>
   <summary>Update all the libraries installed in the ./vendor/ directory.</summary>
@@ -33,7 +33,7 @@
 This command scans all existing dependencies in the vendor directory and
 upgrades them to their latest available versions.
 
-Dependencies are examined by looking at the package.xml file and the vendor 
+Dependencies are examined by looking at the package.xml file and the vendor
 registry.
   </doc>
  </command>

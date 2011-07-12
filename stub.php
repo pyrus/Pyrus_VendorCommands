@@ -8,7 +8,7 @@
 if (version_compare(phpversion(), '5.3.1', '<')) {
     if (substr(phpversion(), 0, 5) != '5.3.1') {
         // this small hack is because of running RCs of 5.3.1
-        echo "PEAR2_VendorCommands requires PHP 5.3.1 or newer.
+        echo "Pyrus_VendorCommands requires PHP 5.3.1 or newer.
 ";
         exit -1;
     }
@@ -23,29 +23,29 @@ foreach (array('phar', 'spl', 'pcre', 'simplexml') as $ext) {
 try {
     Phar::mapPhar();
 } catch (Exception $e) {
-    echo "Cannot process PEAR2_VendorCommands phar:
+    echo "Cannot process Pyrus_VendorCommands phar:
 ";
     echo $e->getMessage(), "
 ";
     exit -1;
 }
-function PEAR2_VendorCommands_autoload($class)
+function Pyrus_VendorCommands_autoload($class)
 {
     $class = str_replace(array('_', '\\'), '/', $class);
-    if (file_exists('phar://' . __FILE__ . '/PEAR2_VendorCommands-@PACKAGE_VERSION@/php/' . $class . '.php')) {
-        include 'phar://' . __FILE__ . '/PEAR2_VendorCommands-@PACKAGE_VERSION@/php/' . $class . '.php';
+    if (file_exists('phar://' . __FILE__ . '/Pyrus_VendorCommands-@PACKAGE_VERSION@/php/' . $class . '.php')) {
+        include 'phar://' . __FILE__ . '/Pyrus_VendorCommands-@PACKAGE_VERSION@/php/' . $class . '.php';
     }
 }
-spl_autoload_register("PEAR2_VendorCommands_autoload");
+spl_autoload_register("Pyrus_VendorCommands_autoload");
 $phar = new Phar(__FILE__);
 $sig = $phar->getSignature();
-define('PEAR2_VendorCommands_SIG', $sig['hash']);
-define('PEAR2_VendorCommands_SIGTYPE', $sig['hash_type']);
+define('Pyrus_VendorCommands_SIG', $sig['hash']);
+define('Pyrus_VendorCommands_SIGTYPE', $sig['hash_type']);
 
 // your package-specific stuff here, for instance, here is what Pyrus does:
 
 /**
- * $frontend = new \PEAR2\Pyrus\ScriptFrontend\Commands;
+ * $frontend = new \Pyrus\ScriptFrontend\Commands;
  * @array_shift($_SERVER['argv']);
  * $frontend->run($_SERVER['argv']);
  */

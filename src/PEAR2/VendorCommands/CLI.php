@@ -1,35 +1,35 @@
 <?php
 /**
- * PEAR2\VendorCommands\Main
+ * Pyrus\VendorCommands\Main
  *
  * PHP version 5
  *
- * @category  PEAR2
- * @package   PEAR2_VendorCommands
+ * @category  Pyrus
+ * @package   Pyrus_VendorCommands
  * @author    Brett Bieber <brett.bieber@gmail.com>
  * @copyright 2011 Brett Bieber
  * @license   http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @version   SVN: $Id$
- * @link      https://github.com/pear2/PEAR2_VendorCommands
+ * @link      https://github.com/pyrus/Pyrus_VendorCommands
  */
 
 /**
- * Main class for PEAR2_VendorCommands
+ * Main class for Pyrus_VendorCommands
  *
- * @category  PEAR2
- * @package   PEAR2_VendorCommands
+ * @category  Pyrus
+ * @package   Pyrus_VendorCommands
  * @author    Brett Bieber <brett.bieber@gmail.com>
  * @copyright 2011 Brett Bieber
  * @license   http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @link      https://github.com/pear2/PEAR2_VendorCommands
+ * @link      https://github.com/pyrus/Pyrus_VendorCommands
  */
-namespace PEAR2\VendorCommands;
+namespace Pyrus\VendorCommands;
 class CLI
 {
     /**
      * Command to update dependencies found
      *
-     * @param PEAR2\Pyrus\ScriptFrontend\Commands $frontend
+     * @param Pyrus\ScriptFrontend\Commands $frontend
      * @param array $args
      * @param array $options
      */

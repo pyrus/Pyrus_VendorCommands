@@ -1,29 +1,29 @@
 <?php
 /**
- * PEAR2\VendorCommands\Main
+ * Pyrus\VendorCommands\Main
  *
  * PHP version 5
  *
- * @category  Yourcategory
- * @package   PEAR2_VendorCommands
+ * @category  Pyrus
+ * @package   Pyrus_VendorCommands
  * @author    Your Name <handle@php.net>
  * @copyright 2011 Your Name
  * @license   http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @version   SVN: $Id$
- * @link      http://svn.php.net/repository/pear2/PEAR2_VendorCommands
+ * @link      https://github.com/pyrus/Pyrus_VendorCommands
  */
 
 /**
- * Main class for PEAR2_VendorCommands
+ * Main class for Pyrus_VendorCommands
  *
- * @category  Yourcategory
- * @package   PEAR2_VendorCommands
+ * @category  Pyrus
+ * @package   Pyrus_VendorCommands
  * @author    Your Name <handle@php.net>
  * @copyright 2011 Your Name
  * @license   http://www.opensource.org/licenses/bsd-license.php New BSD License
- * @link      http://svn.php.net/repository/pear2/PEAR2_VendorCommands
+ * @link      https://github.com/pyrus/Pyrus_VendorCommands
  */
-namespace PEAR2\VendorCommands;
+namespace Pyrus\VendorCommands;
 class Main
 {
 
@@ -37,7 +37,7 @@ class Main
     /**
      * The Pyrus config for the vendor registry
      *
-     * @var PEAR2\Pyrus\Config
+     * @var Pyrus\Config
      */
     protected $config;
 
@@ -71,7 +71,7 @@ class Main
 
         $xml_file = dirname($this->path) . DIRECTORY_SEPARATOR . 'package.xml';
         if (file_exists($xml_file)) {
-            $xml = new \PEAR2\Pyrus\PackageFile($xml_file);
+            $xml = new \Pyrus\PackageFile($xml_file);
             foreach ($xml->dependencies['required']->package as $dep) {
                 $dep_description = $dep->channel . '/' . $dep->name;
                 $deps[] = $dep_description;
@@ -82,7 +82,7 @@ class Main
 
     function scanVendorRegistry()
     {
-        
+
     }
 
     function installDependencies($deps)
@@ -98,7 +98,7 @@ class Main
     function setPath($path)
     {
         $this->path = $path;
-        $this->config = \PEAR2\Pyrus\Config::singleton($path);
+        $this->config = \Pyrus\Config::singleton($path);
     }
 
     function getPath()
